@@ -6,10 +6,46 @@
   </head>
   <body>
     <form action="/login" method="post">
-      <fieldset>
-        <legend>照片</legend>
+      <div>
         <label for="file">选择照片</label>
-      </fieldset>
+        <input type="file" name="file">
+      </div>
+      <div>
+        <label>昵称</label>
+        <input type="text" name="description">
+      </div>
+        <div>
+        <label>学历</label>
+        <select>
+          <option value="0" selected>大专</option>
+          <option value="1">本科</option>
+        </select>
+      </div>
+      <div>
+        <label>性别</label>
+        <input type="radio" name="male" value="1">
+        <label>男</label>
+        <input type="radio" name="female" value="0">
+        <label>女</label>
+      </div>
+      <div>
+        <label>爱好</label>
+        <input type="checkbox" name="movie">
+        <label>电影</label>
+        <input type="checkbox" name="shoot">
+        <label>摄影</label>
+        <input type="checkbox" name="music">
+        <label>音乐</label>
+        <input type="checkbox" name="reading">
+        <label>阅读</label>
+      </div>
+      <div>
+        <label>签名</label>
+        <textarea name="autograph" rows="4" id="autograph"></textarea>
+      </div>
+      <div>
+        <button type="submit">保存</button>
+      </div>
     </form>
   </body>
 </html>

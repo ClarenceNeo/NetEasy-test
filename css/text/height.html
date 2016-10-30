@@ -1,0 +1,21 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>height</title>
+    <style type="text/css">
+      div, span{background-color: pink;}
+
+      /*.sample{height: 100px;}*/
+      /*与父元素高度相同，设置 50% 高度不能显示，可以通过设置 html 和 body 元素高度修复。*/
+      .sample{height: 50%}
+      html,body{height: 100%}
+      span{height: 200px;}
+    </style>
+  </head>
+  <body>
+    <div class="sample">sample</div>
+    <br>
+    <span>inline</span>
+  </body>
+</html>

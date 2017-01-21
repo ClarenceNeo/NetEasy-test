@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>登录网易通行证</title>
+    <style type="text/css">
+      .title{margin-bottom:15px;font-family: "Microsoft YaHei";font-size: 14px;font-weight: bold;line-height: 16px;}
+      .info label{line-height: 60px;font-family: "STSong";font-size: 12px;vertical-align: center;}
+      .info input{width: 200px;height: 20px;box-sizing:border-box;border: 1px solid #ddd;margin-bottom: 15px;}
+      form input{}
+      .btn{width: 40px;height: 20px;background-color: #58AFDC;color: #fff;border: none;
+          font-family: "STSong";font-size: 12px;text-align: center;vertical-align: center;}
+    </style>
+  </head>
+  <body>
+    <form action="/login" method="post">
+      <legend class="title">登录网易通行证</legend>
+      <div class="info">
+      <label for="name">用户名:</label>
+        <input type="text" id=name name="name" value="" /><br />
+
+      <label for="email">邮件:</label>
+        <input type="text" id=email name="email" value="" /><br />
+      </div>
+      <p><input type="submit" class="btn" value="登录"></input></p>
+    </form>
+  </body>
+</html>

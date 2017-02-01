@@ -1,0 +1,32 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>构造函数设置原型</title>
+  </head>
+  <body>
+    <script type="text/javascript">
+      // Car 构造函数
+      function Car(logo) {
+        this.logo = logo || 'unknown name';
+      }
+      // 设置 Car 的 prototype 属性
+      Car.prototype = {
+        start: function() {
+          console.log('%s start', this.loge);
+        },
+        run: function() {
+          console.log('%s running', this.loge);
+        },
+        stop: function() {
+          console.log('%s stop', this.loge);
+        }
+      }
+      // 创建对象
+      var landRover = new Car('landRover');
+      var landWind = new Car('landWind');
+      // 调用方法
+      landRover.start();
+    </script>
+  </body>
+</html>

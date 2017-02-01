@@ -1,0 +1,33 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Object.create</title>
+  </head>
+  <body>
+    <script type="text/javascript">
+      // 定义原型对象
+      var landRover = {
+        name: 'landRover',
+        start: function() {
+          console.log('%s start', this.loge);
+        },
+        run: function() {
+          console.log('%s running', this.loge);
+        },
+        stop: function() {
+          console.log('%s stop', this.loge);
+        }
+      }
+      // 使用原型创建新对象
+      var landWind = Object.create(landRover);
+      landWind.logo = 'landWind';
+
+      var landCruiser = Object.create(landRover);
+      landCruiser.logo = 'landCruiser';
+
+      // 启动
+      landWind.start();
+    </script>
+  </body>
+</html>

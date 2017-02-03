@@ -1,0 +1,23 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>函数进阶2</title>
+  </head>
+  <body>
+    <script type="text/javascript">
+      add1(1);
+      function add1(i){
+        console.log(i+1);
+      }
+
+      var add2 = function(i){
+        console.log(i+2);
+      }
+      add2(1);
+
+      var add3 = new Function("i","j","return(i+j)");
+      add3(1);
+    </script>
+  </body>
+</html>

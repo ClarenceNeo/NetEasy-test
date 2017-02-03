@@ -1,0 +1,43 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>原型链</title>
+  </head>
+  <body>
+    <script type="text/javascript">
+      // Car 构造函数
+      function Car(logo) {
+        this.logo = logo || 'unknown name';
+      }
+      // 设置 Car 的 prototype 属性
+      Car.prototype = {
+        start: function() {
+          console.log('%s start', this.loge);
+        },
+        run: function() {
+          console.log('%s running', this.loge);
+        },
+        stop: function() {
+          console.log('%s stop', this.loge);
+        }
+      }
+      // LandRover 构造函数
+      function LandRover(seriaLno) {
+        this.serialNumber = seriaLno;
+      }
+      // 设置 LandRover 的 prototype 属性
+      LandRover.prototype = new Car('LandRover');
+
+      // 创建 LandRover 对象
+      var landRover1 = new LandRover(100000);
+      var landRover2 = new LandRover(100001);
+
+      console.log(landRover1.serialno);
+
+      console.log(landRover1.toString());
+
+      landRover1.serialno = 100002;
+    </script>
+  </body>
+</html>

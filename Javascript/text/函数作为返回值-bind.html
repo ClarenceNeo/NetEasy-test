@@ -1,0 +1,37 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>函数作为返回值-bind</title>
+  </head>
+  <body>
+    <script type="text/javascript">
+      // move 函数实现移动平面图上一个点位置功能
+      var move = function(x,y){
+        this.x += x;
+        this.y += y;
+      }
+      // 定一个点 p
+      var p = {x:1, y:1};
+      // bind 方法收受一个参数，并返回一个接受余下参数的函数过程，此时 p 点并没有移动。
+      // var pmove0 = move.bind1(p);
+      // console.log(p);
+      // 这是 p 移动到了 (2,3) 位置
+      // pmove0(1,2);
+      // console.log(p);
+
+      // 当然也可以这样调用
+      // var pmove1 = move.bind(p,1);
+      // console.log(p);
+      // pmove1(2);
+      // console.log(p);
+
+      // 或者这样调用
+      var pmove2 = move.bind(p,1,2);
+      console.log(p);
+      pmove2(2);
+      console.log(p);
+
+    </script>
+  </body>
+</html>

@@ -1,0 +1,31 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>闭包使用举例</title>
+  </head>
+  <body>
+    <script type="text/javascript">
+      // 将字符串中的一些特定字符按顺序用数组中的元素替换，例如：
+      // var arr = ['c','f','h','o'];
+      // var str = 'ab4de8g4ijklmn7';
+      // 替换后 str = 'abcdefghijklmno';
+      // replace 的用法请参考 https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/replace
+
+      var arr = ['c','f','h','o'];
+      var str = 'ab4de8g4ijklmn7';
+      console.log(str);
+
+      var func = (function(){
+        // count 变量会保存在闭包作用域内，表示 func 被调用次数（即正在替换第几个字符）
+        var count = 0;
+        return function(){
+          return arr[count++];
+        }
+      })();
+
+      str = str.replace(/\d/g, func)
+      console.log(str);
+    </script>
+  </body>
+</html>

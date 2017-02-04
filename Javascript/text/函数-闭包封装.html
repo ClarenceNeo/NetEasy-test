@@ -1,0 +1,38 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>闭包使用举例-封装</title>
+  </head>
+  <body>
+    <script type="text/javascript">
+      // 1.暴露 type 类型和 start, stop, getStatus 方法
+      // 2.隐藏 status, light 对象状态
+
+      var Car = function(type){
+        var status = "stop",
+            light = "off";
+        return {
+          type: type,
+          start: function(){
+            status = "driving";
+            light = "on";
+          },
+          stop: function(){
+            status = "stop";
+            light = "off";
+          },
+          getStatus: function(){
+            console.log(type + "is" + status + " with light " + light);
+          }
+        }
+      }
+
+      var audi = new Car("audi");
+      audi.start();
+      audi.getStatus();
+      audi.stop();
+      audi.getStatus();
+    </script>
+  </body>
+</html>

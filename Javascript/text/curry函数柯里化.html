@@ -1,0 +1,61 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>函数作为返回值-curry函数柯里化</title>
+  </head>
+  <body>
+    <script type="text/javascript">
+      /*
+      1. 函数柯里化通常是指把接受多个参数的函数变换成接受一个单一参数（最初函数的第一个参数）
+      的并且返回一个接受余下的参数而且返回结果的新函数的技术。
+      */
+
+      // 最简单的柯里化
+      // sum 函数接受三个参数，并返回求和结果
+      // var sum = function(a,b,c) {
+      //   return a + b + c;
+      // }
+      // // 最简单柯里化的 sum 函数
+      // var sum_curry = function(a) {
+      //   return function(b,c) {
+      //     return a + b + c;
+      //   }
+      // }
+
+      /*
+      2. 更泛化的定义是指给函数分布传递参数，每次函数接受部分参数后应用这些参数，并返回一个函数接受余下
+      的参数，这中间可嵌套多层这样的接受部分函数的函数，直至返回最后结果。归纳一下就是逐步传参，逐步缩小
+      函数的适用范围，逐步求解的过程。
+      */
+      // 泛化柯里化
+      // currying 实现一个函数转变为柯里化函数
+      var currying = function (fn) {
+        var _args = [];
+        return function () {
+          if (arguments.length === 0) {
+            // 实现最终计算
+            return fn.apply(this, _args);
+          }
+          // 这里只是简单的将参数缓存起来（用于解释柯里化概念，并非实现应用场景）
+          Array.prototype.push.apply(_args, [].slice.call(arguments));
+
+          return arguments.callee;
+        }
+      };
+      // sum 函数接受任意参数，并返回求和结果
+      var sum = function () {
+        var total = 0;
+        for (var i = 0, c; c = arguments[i++];) {
+          total += c;
+        }
+        return total;
+      };
+      // 获得一个泛化柯里化的 sum 函数
+      var sum_curry = currying(sum);
+      sum_curry(1)(2,3);
+      sum_curry(4);
+      console.log(sum_curry());
+    </script>
+  </body>
+</html>

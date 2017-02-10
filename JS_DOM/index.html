@@ -1,0 +1,29 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Image Gallery</title>
+    <link rel="stylesheet" type="text/css" href="styles/layout.css">
+  </head>
+  <body>
+    <h1>Snapshots</h1>
+    <ul>
+      <li>
+        <a href="images/city.png" title="A beautiful city" onclick = "showPic(this); return false;">City</a>
+      </li>
+      <li>
+        <a href="images/car.png" title="An old car">Car</a>
+      </li>
+      <li>
+        <a href="images/girl.png" title="A beautiful girl">Girl</a>
+      </li>
+      <li>
+        <a href="images/table.png" title="A blue table">Table</a>
+      </li>
+    </ul>
+    <img id="placeholder" src="images/placeholder.png" alt="my image gallery" />
+    <p id="description">Choose an image.</p>
+
+    <script type="text/javascript" src="scripts/showPic.js"></script>
+  </body>
+</html>

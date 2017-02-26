@@ -5,7 +5,7 @@
   <title>Vue</title>
 </head>
 <body>
-  <script src="https://unpkg.com/vue/dist/vue.js"></script>
+  <script src="js/vue.js"></script>
 
   <div id="app">
     <p>{{ message }}</p>
@@ -29,6 +29,19 @@
   <div id="app-5">
     <p>{{ message }}</p>
     <button v-on:click="reverseMessage">Reverse Message</button>
+  </div>
+
+  <div id="app-6">
+    <p>{{ message }}</p>
+    <input v-model="message">
+  </div>
+
+  <div id="app-7">
+    <ol>
+      <!-- Now we provide each todo-item with the todo object -->
+      <!-- it's representing, so that its content can be dynamic -->
+      <todo-item v-for="item in groceryList" v-bind:todo="item"></todo-item>
+    </ol>
   </div>
 
   <script type="text/javascript">
@@ -70,6 +83,29 @@
         reverseMessage: function () {
           this.message = this.message.split('').reverse().join('')
         }
+      }
+    })
+
+    var app6 = new Vue({
+      el: '#app-6',
+      data: {
+        message: 'Hello Vue!'
+      }
+    })
+
+    Vue.component('todo-item', {
+      props: ['todo'],
+      template: '<li>{{ todo.text }}</li>'
+    })
+
+    var app7 = new Vue({
+      el: '#app-7',
+      data: {
+        groceryList: [
+          { text: 'Vegetables' },
+          { text: 'Cheese' },
+          { text: 'Whatever else humans are supposed to eat' }
+        ]
       }
     })
   </script>

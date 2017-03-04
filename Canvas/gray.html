@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>grayscale</title>
+</head>
+<body>
+<canvas width="800" height="600"></canvas>
+<script>
+
+  /* 不能直接在本地运行，需要在本地服务器环境运行，才能看到效果 */
+
+  var canvas = document.querySelector("canvas");
+  var ctx = canvas.getContext("2d");
+
+  // var data = ctx.getImageData(0, 0, 400, 400);
+
+  // function getgrayscale(imageData) {
+  //   var numPixels = imageData.data.length / 4;
+  //   for (var i = 0; i < numPixels; i++) {
+  //     imageData.data[i * 4 + 0] = 128;
+  //     imageData.data[i * 4 + 1] = 128;
+  //     imageData.data[i * 4 + 2] = 128;
+  //     imageData.data[i * 4 + 3] = 128;
+  //   }
+  //   ctx.putImageData(imageData, 0, 0);
+  // }
+  // getgrayscale(data);
+
+  var image = new Image();
+  image.onload = function() {
+    ctx.drawImage(image, 0, 0);
+    makeGrayScale();
+  }
+  image.src = "workspace.png"
+
+  var makePixelGrayScale = function (r, g, b, a) {
+    var y = (0.3 * r) + (0.59 * g) + (0.11 * b);
+    return {r: y, g: y, b: y, a: y};
+  }
+
+  function makeGrayScale() {
+    var r, g, b, a;
+    var imageData = ctx.getImageData(0, 0, 800, 600);
+    var numPixels = imageData.data.length / 4;
+    for (var i = 0; i < numPixels; i++) {
+      r = imageData.data[i * 4 + 0];
+      g = imageData.data[i * 4 + 1];
+      b = imageData.data[i * 4 + 2];
+      a = imageData.data[i * 4 + 3];
+      pixel = makePixelGrayScale(r, g, b, a);
+      imageData.data[i * 4 + 0] = pixel.r;
+      imageData.data[i * 4 + 1] = pixel.g;
+      imageData.data[i * 4 + 2] = pixel.b;
+      imageData.data[i * 4 + 3] = pixel.a;
+    }
+    ctx.putImageData(imageData, 0, 0);
+  }
+
+
+</script>
+</body>
+</html>

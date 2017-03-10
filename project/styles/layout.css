@@ -17,7 +17,7 @@ button, input, select, textarea { font-size:100%; }
 table { border-collapse:collapse; border-spacing:0; }
 
 /* 清除浮动 */
-.clearfix::after{
+.clearfix:after{
 	content: ".";
 	display: block;
 	height: 0;
@@ -258,5 +258,96 @@ table { border-collapse:collapse; border-spacing:0; }
 }
 .m-nav .search:hover {
   background: url('../images/sprite.png') no-repeat 0 -25px;
-
 }
+
+/* 轮播图 */
+.m-slide {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+}
+.m-slide .carousel-inner {
+  height: 460px;
+  width: 100%;
+}
+.m-slide .carousel-inner .item1 {
+  height: 460px;
+  background: url('../images/banner/banner1.jpg') no-repeat;
+}
+
+/* 分类课程 */
+.m-body .b-top .m-product {
+  width: 1100px;
+  margin: 0 auto;
+  margin-top: 60px;
+  margin-bottom: 60px;
+  overflow: hidden;
+}
+.m-body .b-top .m-product .m-course {
+  float: left;
+  width: 33.3%;
+}
+.m-body .b-top .m-product .m-course .icon {
+  float: left;
+  width: 80px;
+  height: 80px;
+  background: url('../images/sprite.png') no-repeat 0 -123px;
+}
+.m-body .b-top .m-product .m-course .team {
+  float: right;
+  width: 250px;
+  
+}
+
+/* 工作环境 */
+.m-body .b-top .m-workspace {
+  margin-bottom: 80px;
+  width: 100%;
+  min-width: 1205px;
+  overflow: hidden;
+}
+.m-body .b-top .m-workspace .box {
+  width: 1616px;
+  list-style: none;
+}
+.m-body .b-top .m-workspace .box li {
+  display: inline;
+}
+
+/* 课程部分布局 */
+.b-bt {
+  display: table;
+  width: 1100px;
+  margin: 0 auto;
+}
+.bt-main {
+  float: left;
+  width: 880px;
+  margin-right: 18px;
+}
+.bt-side {
+  overflow: hidden;
+}
+
+.bt-main .m-tab .g-tabhd {
+  width: 100%;
+  cursor: pointer;
+}
+.bt-main .m-tab .g-tabhd .btn {
+  float: left;
+  width: 200px;
+  height: 50px;
+  text-align: center;
+  font-family: "Microsoft Ya Hei";
+  font-size: 20px;
+  font-weight: 400;
+  line-height: 50px;
+  color: #666;
+  background-color: #fff;
+  box-shadow: 0 1px 1px rgba(6, 0, 1, 0.2);
+}
+.bt-main .m-tab .g-tabhd .active {
+  background-color: #39A030;
+  color: #fff;
+}
+

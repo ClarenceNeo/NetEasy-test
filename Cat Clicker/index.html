@@ -1,17 +1,19 @@
 <!DOCTYPE html>
 <html>
   <head>
+    <meta charset="utf-8">
     <link rel="stylesheet" href="css/bootstrap.min.css">
     <script type="text/javascript" src="js/jquery-3.1.1.min.js"></script>
     <script type="text/javascript" src="js/bootstrap.min.js"></script>
   </head>
   <body>
     <div class="container">
-      <div class="col-md-2"></div>
-      <div class="col-md-8">
-        <img src="img/cat.jpg">
+      <div class="row" id="col">
+        <div class="col-md-2">
+          <img class="img-responsive" id="my-elem" src="img/cat.jpg">
+          <p>图片被点击了<span id="change">0</span>次。</p>
+        </div>
       </div>
-      <div class="col-md-2"></div>
     </div>
     <script src="js/app.js"></script>
   </body>

@@ -5,12 +5,51 @@
     <link rel="stylesheet" href="css/bootstrap.min.css">
     <script type="text/javascript" src="js/jquery-3.1.1.min.js"></script>
     <script type="text/javascript" src="js/bootstrap.min.js"></script>
+    <style type="text/css">
+      #cats {
+        list-style: none;
+        padding: 0;
+        margin: 20px 0;
+        text-align: center;
+      }
+      #cats li {
+        display: inline-block;
+      }
+      #cats li + li {
+        margin-left: 10px;
+      }
+      #cats li:hover {
+        cursor: pointer;
+      }
+    </style>
   </head>
-  <body>
+<!--   <body>
     <div class="container">
       <div class="row" id="col">
         <div class="col-md-2">
           <img class="img-responsive" id="my-elem" src="img/cat.jpg">
+          <p>图片被点击了<span id="change">0</span>次。</p>
+        </div>
+      </div>
+    </div>
+    <script src="js/app.js"></script>
+  </body> -->
+
+  <body>
+    <div class="container">
+      <div>
+        <ul id="cats">
+          <li id="cat1">cat1</li>
+          <li id="cat2">cat2</li>
+          <li id="cat3">cat3</li>
+          <li id="cat4">cat4</li>
+          <li id="cat5">cat5</li>
+        </ul>
+      </div>
+      <div class="row" id="col">
+        <div class="col-md-3"></div>
+        <div class="col-md-6">
+          <img class="img-responsive" id="my-elem" src="img/cat1.jpg">
           <p>图片被点击了<span id="change">0</span>次。</p>
         </div>
       </div>

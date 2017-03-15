@@ -42,44 +42,44 @@
 
 // }
 
-// var cat = document.getElementById("cat1");
-// cat.addEventListener('click', function(){
-//   var catImage = document.getElementById('my-elem');
-//   catImage.setAttribute('src', 'img/cat1.jpg');
-// })
+var cat = document.getElementById("cat1");
+cat.addEventListener('click', function(){
+  var catImage = document.getElementById('my-elem');
+  catImage.setAttribute('src', 'img/cat1.jpg');
+})
 
-// var cat = document.getElementById("cat2");
-// cat.addEventListener('click', function(){
-//   var catImage = document.getElementById('my-elem');
-//   catImage.setAttribute('src', 'img/cat2.jpg');
-// })
+var cat = document.getElementById("cat2");
+cat.addEventListener('click', function(){
+  var catImage = document.getElementById('my-elem');
+  catImage.setAttribute('src', 'img/cat2.jpg');
+})
 
-// var cat = document.getElementById("cat3");
-// cat.addEventListener('click', function(){
-//   var catImage = document.getElementById('my-elem');
-//   catImage.setAttribute('src', 'img/cat3.jpg');
-// })
+var cat = document.getElementById("cat3");
+cat.addEventListener('click', function(){
+  var catImage = document.getElementById('my-elem');
+  catImage.setAttribute('src', 'img/cat3.jpg');
+})
 
-// var cat = document.getElementById("cat4");
-// cat.addEventListener('click', function(){
-//   var catImage = document.getElementById('my-elem');
-//   catImage.setAttribute('src', 'img/cat4.jpg');
-// })
+var cat = document.getElementById("cat4");
+cat.addEventListener('click', function(){
+  var catImage = document.getElementById('my-elem');
+  catImage.setAttribute('src', 'img/cat4.jpg');
+})
 
-// var cat = document.getElementById("cat5");
-// cat.addEventListener('click', function(){
-//   var catImage = document.getElementById('my-elem');
-//   catImage.setAttribute('src', 'img/cat5.jpg');
-// })
+var cat = document.getElementById("cat5");
+cat.addEventListener('click', function(){
+  var catImage = document.getElementById('my-elem');
+  catImage.setAttribute('src', 'img/cat5.jpg');
+})
 
-var cats = document.getElementById('cats').getElementsByTagName('li');
-var catImage = document.getElementById('my-elem');
-for (var i=1; i<cats.length + 1; i++) {
-  var cat = document.getElementById("cat"+i);
-  cat.addEventListener('click', function(i){
-    catImage.setAttribute('src', 'img/cat'+i+'.jpg');
-  })
-}
+// var cats = document.getElementById('cats').getElementsByTagName('li');
+// var catImage = document.getElementById('my-elem');
+// for (var i=1; i<cats.length + 1; i++) {
+//   var cat = document.getElementById("cat"+i);
+//   cat.addEventListener('click', function(i){
+//     catImage.setAttribute('src', 'img/cat'+i+'.jpg');
+//   })
+// }
 
 
   //   catImage.addEventListener('click', function(){

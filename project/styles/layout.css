@@ -316,13 +316,12 @@ table { border-collapse:collapse; border-spacing:0; }
 
 /* 课程部分布局 */
 .b-bt {
-  display: table;
-  width: 1100px;
+  width: 1205px;
   margin: 0 auto;
 }
 .bt-main {
   float: left;
-  width: 880px;
+  width: 960px;
   margin-right: 18px;
 }
 .bt-side {
@@ -351,3 +350,148 @@ table { border-collapse:collapse; border-spacing:0; }
   color: #fff;
 }
 
+/* 课程信息 */
+
+/* 导航按钮 */
+.m-tab .l-btn{
+	float: right;
+	width: 302px;
+	height: 20px;
+}
+.m-tab .l-btn  li{
+	display: inline-block;
+	width: 20px;
+	height: 20px;
+	margin: 1px 0;
+	font-size: 14px;
+	line-height: 20px;
+	text-align: center;
+	color: #666;
+	cursor: pointer;
+}
+.m-tab .l-btn li:first-child{
+	width: 30px;
+	height: 20px;
+	background-color: #9dd8b1;
+  color: #fff;
+}
+.m-tab .l-btn li:last-child{
+	width: 30px;
+	height: 20px;
+	background-color: #9dd8b1;
+  color: #fff;
+}
+.m-tab .l-btn li:hover{
+	background-color: #9dd8b1;
+	color: #fff;
+}
+.m-tab .l-btn .checked{
+	color: #39a030;
+}
+
+/* 侧边栏信息和排行榜 */
+#bt-video {
+  width: 223px;
+  height: 229px;
+  box-shadow: 0 1px 1px rgba(6, 0, 1, 0.2);
+  background-color: #ffffff;
+}
+.bt-side h5 {
+  box-sizing: border-box;
+	width: 223px;
+  height: 55px;
+  padding-left: 20px;
+  border-bottom: 1px solid #ddd;
+  color: #333333;
+  font-family: "Microsoft Ya Hei";
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 55px;
+}
+.bt-side #bt-video span{
+  display: block;
+  padding-left: 20px;
+	margin-top: 20px;
+  color: #666666;
+  font-family: "Microsoft Ya Hei";
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 22px;
+}
+.bt-side #bt-video #p-video{
+	position: relative;
+	margin: 8px auto;
+	width: 180px;
+	height: 110px;
+	background: url('../images/video/video1.jpg') no-repeat;
+	cursor: pointer;
+}
+
+.bt-top {
+  width: 223px;
+  margin-top: 20px;
+  box-shadow: 0 1px 1px rgba(6, 0, 1, 0.2);
+  background-color: #ffffff;
+}
+
+/* 底部信息栏 */
+.m-footer {
+  width: 100%;
+  height: 262px;
+  background: #2c3339;
+}
+.m-footer .m-ft {
+  width: 1205px;
+  margin: 0 auto;
+  color: #a2a4a5;
+}
+
+.m-footer .m-ft .copyRight {
+  float: left;
+  margin-top: 92px;
+  margin-right: 140px;
+  width: 410px;
+  height: 100px;
+}
+
+.m-footer .m-ft .copyRight .logo {
+  width: 235px;
+  height: 22px;
+  padding-left: 75px;
+  color: #39a030;
+  font-family: "Hiragino Sans GB";
+  font-size: 22px;
+  line-height: 20px;
+  background: url('../images/sprite.png') no-repeat 0 0;
+}
+
+.m-footer .m-ft .copyRight p {
+  width: 393px;
+  height: 38px;
+  margin-top: 28px;
+  opacity: 0.6;
+  color: #ffffff;
+  font-family: "Microsoft Ya Hei";
+  font-size: 13px;
+  font-weight: 400;
+  line-height: 25px;
+}
+
+/* 底栏右侧 */
+
+.m-ft a {
+  display: block;
+  color: #fff;
+  opacity: 0.6;
+}
+
+.m-ft .friendLink, .m-ft .about, .m-ft .more {
+  float: left;
+  margin-top: 82px;
+  margin-right: 100px;
+  font: 15px/30px 'Microsoft YaHei';
+}
+
+.m-ft .friendLink p, .m-ft .about p, .m-ft .more p {
+  font-size: 13px;
+}

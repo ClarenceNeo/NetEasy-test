@@ -261,18 +261,63 @@ table { border-collapse:collapse; border-spacing:0; }
 }
 
 /* 轮播图 */
-.m-slide {
-  position: relative;
-  width: 100%;
-  overflow: hidden;
+.m-bnwrap { 
+	width:100%;
+	min-width: 1205px;
+	position:relative; 
+	overflow:hidden; 
+	height:460px; 
 }
-.m-slide .carousel-inner {
-  height: 460px;
-  width: 100%;
+.m-bnwrap .n-bnr{
+	width: 100%;
 }
-.m-slide .carousel-inner .item1 {
-  height: 460px;
-  background: url('../images/banner/banner1.jpg') no-repeat;
+.m-bnwrap .m-bnr a{
+	display: block;
+	margin: 0 auto;
+	width:1652px;
+	height: 460px;
+	z-index: 0;
+}
+.m-bnwrap .m-bnr a.active{
+	display: block;
+}
+.m-bnwrap .m-bnr .b-pic1{
+	display: none;
+	background: url('../images/banner/banner1.jpg') no-repeat;
+}
+.m-bnwrap .m-bnr .b-pic2{
+	display: none;
+	opacity: 0;
+	filter:Alpha(opacity=0);
+	background: url('../images/banner/banner2.jpg') no-repeat;
+}
+.m-bnwrap .m-bnr .b-pic3{
+	display:none;
+	opacity: 0;
+	filter:Alpha(opacity=0);
+	background: url('../images/banner/banner3.jpg') no-repeat;
+}
+.m-bnwrap .pointer{
+	position: absolute;
+	bottom: 8px;
+	left: 50%;
+	margin-left: -26px;
+	width: 64px;
+	height: 10px;
+	z-index: 10;
+}
+.m-wrbnwrapap .pointer i{
+	position: relative;
+	display: inline-block;
+	width: 10px;
+	height: 10px;
+	border-radius: 50%;
+	margin-right: 5px;
+	background-color: #fff;
+	cursor: pointer;
+}
+.m-bnwrap .pointer i.active{
+	background-color: #333;
 }
 
 /* 分类课程 */

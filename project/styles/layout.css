@@ -306,7 +306,7 @@ table { border-collapse:collapse; border-spacing:0; }
 	height: 10px;
 	z-index: 10;
 }
-.m-wrbnwrapap .pointer i{
+.m-bnwrap .pointer i{
 	position: relative;
 	display: inline-block;
 	width: 10px;

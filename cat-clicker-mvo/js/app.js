@@ -61,14 +61,20 @@ var octopus = {
 	},
 	getCurrentAdmin: function() {
 		return model.currentAdmin;
-	}
+	},
 	hideAdmin: function() {
-		return model.currentAdmin = false;
+		model.currentAdmin = false;
+		adminView.render();
 	},
 	showAdmin: function() {
-		return model.currentAdmin = true;
+		model.currentAdmin = true;
+		adminView.render();
 	},
 	adminSave: function() {
+		model.currentCat.clickCount = adminView.catCount.value;
+		model.currentCat.name = adminView.catName.value;
+		model.currentCat.imgAttribution = adminView.catUrl.value;
+		catView.render();
 	}
 }
 
@@ -128,14 +134,19 @@ var adminView = {
 	init: function() {
 		this.adminElem = document.getElementById('admin');
 		this.adminBtn = document.getElementById('b-admin');
+		this.saveElem = document.getElementById('c-save');
 		this.cancelBtn = document.getElementById('c-cancel');
+		this.catName = document.getElementById('c-name');
+		this.catUrl = document.getElementById('c-url');
+		this.catCount = document.getElementById('c-count');
 		this.cancelBtn.addEventListener('click', function() {
 			octopus.hideAdmin();
-			this.render();
 		});
 		this.adminBtn.addEventListener('click', function() {
 			octopus.showAdmin();
-			this.render();
+		});
+		this.saveElem.addEventListener('click', function() {
+			octopus.adminSave();
 		})
 		this.render();
 	},

@@ -2,6 +2,7 @@
 
 var model = {
 	currentCat: null,
+	currentAdmin: false,
 	cats: [
 	  {
 	  	clickCount : 0,
@@ -43,6 +44,7 @@ var octopus = {
 		model.currentCat = model.cats[0];
 		catListView.init();
 		catView.init();
+		adminView.init();
 	},
 	getCurrentCat: function() {
 		return model.currentCat;
@@ -56,6 +58,17 @@ var octopus = {
 	incrementCounter: function() {
 		model.currentCat.clickCount++;
 		catView.render();
+	},
+	getCurrentAdmin: function() {
+		return model.currentAdmin;
+	}
+	hideAdmin: function() {
+		return model.currentAdmin = false;
+	},
+	showAdmin: function() {
+		return model.currentAdmin = true;
+	},
+	adminSave: function() {
 	}
 }
 
@@ -78,7 +91,7 @@ var catView = {
 		var currentCat = octopus.getCurrentCat();
 		this.catNameElem.textContent = currentCat.name;
 		this.catImageElem.src = currentCat.imgSrc;
-		this.countElem.textContent = '被点击了' + currentCat.clickCount + '次';
+		this.countElem.textContent = '被点击了 ' + currentCat.clickCount + ' 次';
 	}
 };
 
@@ -110,5 +123,30 @@ var catListView = {
 		}
 	}
 };
+
+var adminView = {
+	init: function() {
+		this.adminElem = document.getElementById('admin');
+		this.adminBtn = document.getElementById('b-admin');
+		this.cancelBtn = document.getElementById('c-cancel');
+		this.cancelBtn.addEventListener('click', function() {
+			octopus.hideAdmin();
+			this.render();
+		});
+		this.adminBtn.addEventListener('click', function() {
+			octopus.showAdmin();
+			this.render();
+		})
+		this.render();
+	},
+	render: function() {
+		var adminView = octopus.getCurrentAdmin();
+		if (adminView) {
+			this.adminElem.style.display = "";
+		} else {
+			this.adminElem.style.display = "none";
+		}
+	}
+}
 
 octopus.init();
